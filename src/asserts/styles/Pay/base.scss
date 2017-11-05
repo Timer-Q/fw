@@ -1,0 +1,78 @@
+/* 支付渠道管理dialog样式重置*/
+
+.pay-channel-list {
+    /* dialog宽度样式重置*/
+    .el-dialog {
+        width: 526px;
+    }
+    .el-dialog__body {
+        padding: 15px 15px 40px 15px;
+    }
+    .dialog-line {
+        .el-input {
+            width: 160px;
+        }
+        .el-input__inner {
+            height: 28px;
+        }
+        .dialog-line-label {
+            width: 53px;
+            text-align: right;
+        }
+    }
+}
+
+
+/* 业务平台管理dialog样式重置*/
+
+.business-platform-list {
+    .el-dialog {
+        width: 405px;
+    }
+    .el-dialog__body {
+        padding: 15px;
+    }
+    .dialog-line {
+        .dialog-line-label {
+            width: 75px;
+            text-align: right;
+        }
+        &:last-child {
+            .dialog-line-label {
+                vertical-align: top;
+            }
+        }
+        .el-input,
+        textarea {
+            width: 285px;
+        }
+        .el-input__inner {
+            height: 28px;
+        }
+        .textarea-box {
+            display: inline-block;
+            position: relative;
+        }
+        .cover-slash {
+            position: absolute;
+            bottom: 1px;
+            right: 1px;
+            width: 20px;
+            height: 20px;
+        }
+        .count-box {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+        }
+        textarea {
+            float: left;
+            height: 110px;
+            padding: 10px 10px 30px 10px;
+            box-sizing: border-box;
+            border: 1px solid #bfcbd9;
+            font-size: 12px;
+        }
+    }
+}

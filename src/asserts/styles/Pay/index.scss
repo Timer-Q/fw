@@ -1,0 +1,47 @@
+/**
+来源：金融支付
+背锅人：李浩楠
+ */
+.pay {
+    /* element-ui层叠样式*/
+    @import './reset.scss';
+    /* 布局样式*/
+    @import './grid.scss';
+    /* 模块样式*/
+    @import './module.scss';
+    /* 元件样式*/
+    @import './unit.scss';
+    /* 状态样式*/
+    @import './status.scss';
+    /* 功能样式*/
+    @import './func.scss';
+    /* 基础信息管理样式*/
+    @import './base.scss';
+    /* 企业用户管理样式*/
+    @import './company.scss';
+    /* 差错帐管理样式*/
+    @import './billProcessing.scss';
+}
+
+/* 重置select下拉列表样式*/
+.pay-query-select {
+    .el-select-dropdown__item {
+        height: 28px;
+        padding: 0 0 0 10px;
+        box-sizing: border-box;
+        font-size: 12px;
+        // 重置select下拉列表被选中时样式
+        &.selected {
+            background-color: #28a7e1;
+            >span {
+                color: #fff;
+            }
+        }
+        // 重置select下拉列表内文字样式
+        >span {
+            display: block;
+            line-height: 28px !important;
+            color: #666;
+        }
+    }
+}

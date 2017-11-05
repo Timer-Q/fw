@@ -1,0 +1,67 @@
+.b2b_scm{
+    /* 表格样式重置*/
+    .el-table {
+        border: 1px solid #ccc;
+        font-size: 12px;
+        color: #333;
+        th {
+            background-color: #eee;
+            height: 32px;
+            .cell {
+                line-height: 32px;
+                font-size: 12px;
+                font-weight: normal;
+                text-align: center;
+            }
+        }
+        td {
+            height: 28px;
+            .cell {
+                line-height: 28px;
+                white-space: nowrap;
+            }
+        }
+        th,
+        td {
+            box-sizing: border-box;
+        }
+        .cell,
+        th>div {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    .el-table--fit {
+        border-right: 0;
+        border-bottom: 0;
+    }
+    .el-table--enable-row-hover .el-table__body tr {
+        &:hover>td {
+            background: #eee;
+        }
+    }
+    .el-table .el-table__body tr.current-row {
+        >td {
+            background: #d8f0fa;
+        }
+    }
+    .el-table td,
+    .el-table th.is-leaf {
+        border-bottom: 1px solid #ccc;
+    }
+    .el-table--border td,
+    .el-table--border th {
+        border-right: 1px solid #ccc;
+    }
+    .el-table__footer-wrapper thead div,
+    .el-table__header-wrapper thead div {
+        background-color: #eee;
+        color: #333;
+        font-weight: 300;
+        font-size: 12px;
+    }
+    .el-table::after,
+    .el-table::before {
+        background-color: #ccc;
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "presets": [
+        "es2015",
+        "react",
+        "stage-0",
+        "stage-1",
+        "stage-2",
+        "stage-3"
+    ],
+    "plugins": [
+        "syntax-dynamic-import",
+        "transform-runtime",
+        // npm install babel-plugin-transform-runtime -save-dev,这个插件的作用是支持es7特性
+        [
+            "component",
+            [
+                {
+                    "libraryName": "element-ui",
+                    "styleLibraryName": "theme-default"
+                }
+            ]
+        ]
+    ]
+}

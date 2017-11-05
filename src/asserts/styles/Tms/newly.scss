@@ -1,0 +1,210 @@
+.tms_channelMag,.tms_channelAdd{
+    /*表格多选框样式重置*/
+    .el-checkbox__inner{
+        border-radius: 0;
+    }
+/* 表格样式重置*/
+.el-table {
+    border: 1px solid #ccc;
+    font-size: 12px;
+    color: #333;
+th {
+    background-color: #eee;
+    height: 32px;
+.cell {
+    line-height: 32px;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+}
+}
+td {
+    height: 28px;
+.cell {
+    line-height: 28px;
+    white-space: nowrap;
+}
+}
+th,
+td {
+    box-sizing: border-box;
+}
+.cell,
+th>div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+}
+.el-table--fit {
+    border-right: 0;
+    border-bottom: 0;
+}
+.el-table--enable-row-hover .el-table__body tr {
+&:hover>td {
+     background: #eee;
+ }
+}
+.el-table .el-table__body tr.current-row {
+>td {
+     background: #d8f0fa;
+ }
+}
+.el-table td,
+.el-table th.is-leaf {
+    border-bottom: 1px solid #ccc;
+}
+.el-table--border td,
+.el-table--border th {
+    border-right: 1px solid #ccc;
+}
+.el-table__footer-wrapper thead div,
+.el-table__header-wrapper thead div {
+    background-color: #eee;
+    color: #333;
+    font-weight: 300;
+    font-size: 12px;
+}
+.el-table::after,
+.el-table::before {
+    background-color: #ccc;
+}
+
+/* 分页样式重置*/
+
+.el-pagination {
+    float: right;
+    margin-top: 16px;
+}
+.el-table__empty-block{
+    display: none;
+}
+.nochannel .el-button--text span{
+    color: #2da9e2;
+    text-decoration: underline;
+}
+/*修改下拉框的默认宽度*/
+.channelMsg .el-select>.el-input{
+    width:120px;
+}
+
+}
+
+// dialog重置显示位置
+   .el-dialog {
+       transform: translate(-50%, 50%);
+   }
+/* dialog重置头部样式*/
+.el-dialog__header {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background-color: #48aeec;
+}
+.el-dialog__title {
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal;
+}
+.el-dialog__headerbtn {
+    margin-top: 10px;
+}
+/* dialog-body重置样式*/
+.el-dialog__body {
+/* dialog-body内每行最外层div基础样式*/
+.dialog-line {
+    overflow: hidden;
+    padding-bottom: 10px;
+.dialog-line-label {
+    display: inline-block;
+    font-size: 12px;
+}
+.must-write:before {
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    transform: translate(0, -50%);
+    content: '*';
+    color: red;
+}
+.sigh:before {
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    transform: translate(0, -50%);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    content: '!';
+    color: red;
+}
+}
+/* dialog-body内每行input样式重置*/
+.el-input,
+.el-textarea {
+    display: inline-block;
+}
+.el-input__inner,
+.el-textarea__inner {
+    border-radius: 4px;
+}
+}
+/* dialog-footer内button样式重置*/
+.el-dialog__footer {
+    height: 44px;
+    margin-top:30px;
+    padding: 0;
+    padding-top: 10px;
+    padding-right: 16px;
+    background-color: #f5f5f5;
+.el-button {
+    height: 24px;
+    line-height: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 12px;
+}
+.el-button--warning {
+span {
+    color: #fff;
+}
+}
+}
+
+/*pagination样式重置*/
+.el-input__inner {
+    margin-left: 10px;
+}
+
+li.number {
+    margin: 0 3px;
+    border: 1px solid #ccc;
+}
+
+.el-pager li.active + li {
+    border-left: 1px solid #ccc;
+}
+.el-pager li.btn-quicknext, .el-pager li.btn-quickprev{
+    border: 1px solid #ccc;
+    margin: 0 3px;
+
+}
+.el-pagination button.btn-prev,.el-pagination button.btn-next{
+    border: 1px solid #ccc;
+    margin: 0 3px;
+
+}
+.el-pager li.active{
+    margin: 0 3px;
+}
+/*分页方格圆角*/
+ul.el-pager li{
+    border-radius: 3px;
+}
+.el-pagination .btn-prev,.el-pagination .btn-next,.el-pagination__editor,.el-pagination__sizes{
+    border-radius: 3px;
+}
+.channelName .cell{
+    color:dodgerblue;
+}
+

@@ -1,0 +1,50 @@
+/*媒体查询*/
+
+/*@media only screen{*/
+/*!*里面是查询浏览器的宽度，达到要求就执行这里的样式*!*/
+/*!*给窗体一个最小宽度*!*/
+/*html{*/
+/*min-width: 768px;*/
+/*}*/
+/*}*/
+
+/* 超小屏幕（手机，小于 768px） */
+@media screen and (max-width: 768px) {
+    body {
+        /*为什么要加important那？因为用了第三方的antd的样式库，antd的body里面设置的字体样式优先级比我们的高*/
+        font-family: '宋体' !important;
+        /*font-family: '宋体' !important;*/
+        font-size: 16px !important;
+
+    }
+}
+
+/* 小屏幕（平板，大于等于 768px） */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    body {
+        font-family: '宋体' !important;
+        /*font-family: '宋体' !important;*/
+        font-size: 18px !important;
+
+    }
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    body {
+        /*font-family: '微软雅黑' !important;*/
+        font-family: '宋体' !important;
+        font-size: 20px !important;
+
+    }
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media screen and (min-width: 1201px) {
+    body {
+        /*font-family: '微软雅黑' !important;*/
+        font-family: '宋体' !important;
+        font-size: 24px !important;
+
+    }
+}

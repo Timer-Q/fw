@@ -1,0 +1,15 @@
+node_modules/
+
+dist/
+preview/
+
+.idea/
+.project
+.vscode/
+.project
+
+yarn.lock
+yarn-error.log
+npm-debug.log
+
+src/config/env.js

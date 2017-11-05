@@ -1,0 +1,294 @@
+/*全局通用样式*/
+/*@charset "utf-8";*/
+/* CSS Document */
+@import './const.scss';
+
+html,body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form,
+fieldset, input, textarea, p, blockquote, th, td,span{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    outline:none;
+    //color: black;
+}
+table {
+    border-collapse: collapse; /*让表格边框细线*/
+    border-spacing: 0; /*清除边框间距*/
+}
+
+fieldset, img {
+    border: 0 none; /*有些浏览器默认这些标签有边框，所以要清除默认边框*/
+    display: block;
+}
+
+address, caption, cite, code, dfn, em, i, u, b, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+    /*清除标签默认文本样式和加粗*/
+}
+
+input, textarea {
+    outline: 0 none; /*去掉文本框的默认轮廓线*/
+}
+
+ol, ul {
+    list-style: none; /*清除列表默认样式*/
+}
+
+caption, th {
+    text-align: left; /*清除标签默认文本居中对齐*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    // font-weight: normal; /*清除标题标签的默认样式*/
+}
+
+a {
+    text-decoration: none; /*大部分页面中的链接没有下划线*/
+}
+
+.clearfix:after {
+    height: 0;
+    content: " ";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1; /*IE低版本浏览器不支持after伪类所以要加这一句*/
+}
+
+.fl{
+    float: left;
+}
+
+/*全局滚动条式样*/
+::-webkit-scrollbar {
+    width: 2px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color:#f7f7f7;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(130, 130, 130, .2);
+}
+
+html{
+    min-width: 986px;
+    overflow:hidden;
+}
+html,body{
+    height: 100%;
+}
+
+.f_l {
+    float: left;
+}
+
+.f_r {
+    float: right;
+}
+
+.f12 {
+    font-size: 12px;
+}
+
+.f14 {
+    font-size: 14px;
+}
+.f16{
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.f20 {
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: "iconfont";
+    src: url('../fonts/iconfont.eot');
+    /* IE9*/
+    src: url('../fonts/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+    url('../fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg#iconfont') format('svg');
+    /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: rgb(161, 170, 182);
+}
+// 二级tab下方按钮下的投影
+.projection{
+    font-size: 0;
+    box-shadow: 0 4px 6px rgba(88,103,120,0.2);
+    padding-left:5px;
+}
+/*******************elementui*************************************************************************************/
+
+.el-badge__content.is-fixed{
+    top: 10px;
+    right: 5px;
+}
+.el-badge__content{
+    border-radius: 50%;
+    height: 15px;
+    line-height: 1;
+    padding: 0px 4px;
+    border: none;
+}
+/* tooltip字体颜色 */
+.el-tooltip__popper {
+    div {
+        color: #fff;
+    }
+}
+.tabs-outer,.el-tabs__content{
+    height:100%;
+}
+//二级tab------------------------------------------------------------
+.temporary-tabs{
+    margin-top: 10px;
+    position: relative;
+}
+.temporary-tabs.el-tabs--card>.el-tabs__header{
+    border-color: #8998a9;
+    margin:0;
+    padding-left:15px;
+}
+.temporary-tabs.el-tabs--card>.el-tabs__header .el-tabs__item.is-active{
+    color: #303e51;
+    background: #ffffff;
+    border: 1px solid #8998a9;
+    border-bottom: transparent;
+}
+.temporary-tabs.el-tabs--card>.el-tabs__header .el-tabs__item.is-closable:not(.is-active):hover{
+    color: #666666;
+    background: rgba(28,62,81,0.15);
+}
+.temporary-tabs .el-tabs__item{
+    color: #999999;
+    background: rgba(28,62,81,0.1);
+    font-size: 12px;
+    border-radius: 4px;
+    height: 26px;
+    line-height: 26px;
+    &:not(.is-active){
+        margin-right:1px;
+    }
+}
+//二级tab下方按钮---------------------------------------------
+.public-function-btn.el-button{
+    height: 22px;
+    line-height: 22px;
+    margin:10px 0 10px 10px;
+    font-size: 12px;
+    border:1px solid #8998a9;
+    color: #8998a9;
+    padding: 0 10px;
+    vertical-align: middle;
+    &.is-disabled{
+        border-color: #CCCCCC;
+        background: #ffffff;
+        span{
+            color: #cccccc;
+        }
+    }
+    &.disabled{
+        border-color: #CCCCCC;
+        span{
+            color: #cccccc;
+        }
+    }
+    span{
+        color: #8998a9;
+    }
+}
+
+/* 解决表格fixed后三级菜单无法遮挡问题 */
+body {
+    .menu-tabs-row,.header {
+        z-index: 9999 !important;
+    }
+}
+
+/***wangpeng***/
+
+/***查询***/
+.bee-search {
+    width: 66px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    border: 1px solid $theme-blue;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+    background: #f5fdff;
+    cursor: pointer;
+}
+/***清空***/
+.bee-clear {
+    font-size: 12px;
+    color: #676767;
+    cursor: pointer;
+}
+/***确认***/
+/***取消***/
+
+body{
+    /*-----系统提示样式  start-----*/
+    .el-message {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+        box-sizing: border-box;
+        border-radius: 10px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background:rgba(0,0,0,0.6);
+        min-width: 0;
+        max-width: auto;
+        height: 44px;
+        line-height: 44px;
+        .el-message__group {
+            height: 100%;
+            p {
+                font-size: 12px;
+                color: #fff;
+                margin:0;
+            }
+            i {
+                color: #05c728;
+                font-size: 20px;
+                margin-right: 10px;
+                &.icon-chenggong{
+                    color: #05c728;
+                }
+                &.icon-shanchuxx{
+                    color: red;
+                }
+                &.icon-jingshi{
+                    color: sandybrown;
+                }
+                &.icon-bangzhu{
+                    color: darkturquoise;
+                }
+            }
+        }
+    }
+    /*--------系统提示end-----*/
+}

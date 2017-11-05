@@ -1,0 +1,13 @@
+.east-expander{
+
+    right:-50px;
+
+
+}
+.div-expander{
+    width: 50px;
+    top:40%;
+    height: 40px;
+    border:solid 1px chocolate;
+    border-radius: 4px;
+}

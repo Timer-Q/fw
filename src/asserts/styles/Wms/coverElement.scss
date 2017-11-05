@@ -1,0 +1,1172 @@
+/**
+  *@usage  Wms
+  *@author Zhigang Xue
+  *@date   2017-9-19
+  *Fw css coverElement
+  */
+
+/*---------------------重置Element UI样式-----------------------*/
+body {
+    /*-----wms 重置element ui样式    start-----*/
+    .wms-items {
+        /*-----重置table样式   start-----*/
+        .el-table {
+            border: 1px solid #ccc;
+            font-size: 12px;
+            color: #333;
+            th {
+                background-color: #eee;
+                height: 32px;
+                .cell {
+                    line-height: 32px;
+                    font-size: 12px;
+                    font-weight: normal;
+                    text-align: center;
+                }
+            }
+            td {
+                height: 28px;
+                .cell {
+                    line-height: 28px;
+                    white-space: nowrap;
+                }
+            }
+            th, td {
+                box-sizing: border-box;
+            }
+            .cell, th > div {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        .el-table--fit {
+            border-right: 0;
+            border-bottom: 0;
+        }
+        .el-table--enable-row-hover .el-table__body tr {
+            &:hover > td:not(:first-child) {
+                background: #eee;
+            }
+            &:hover > td:first-child, &:hover > td.el-table-column--selection {
+                background: #ffffff;
+            }
+        }
+        .el-table .el-table__body tr.current-row {
+            > td {
+                background: #d8f0fa;
+            }
+            > td:first-child, > td.el-table-column--selection {
+                background: #ffffff;
+            }
+        }
+        .el-table td, .el-table th.is-leaf {
+            border-bottom: 1px solid #ccc;
+        }
+        .el-table--border td, .el-table--border th {
+            border-right: 1px solid #ccc;
+        }
+        .el-table__footer-wrapper thead div, .el-table__header-wrapper thead div {
+            background-color: #eee;
+            color: #333;
+            font-weight: 300;
+            font-size: 12px;
+        }
+        .el-table::after, .el-table::before {
+            background-color: #ccc;
+        }
+        /*固定表头前两列背景颜色覆盖*/
+        .el-table__fixed-header-wrapper thead div {
+            background: #eee;
+        }
+        /*-----重置table样式   end-----*/
+
+        /*-----重置input样式   start-----*/
+        .el-input, .el-input__inner {
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            box-sizing: border-box;
+            font-size: 12px;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+        .el-input__inner {
+            border: 1px solid #ccc;
+        }
+        .el-input.is-disabled .el-input__inner {
+            border-color: #ccc;
+            background-color: #f5f5f5;
+            color: #999;
+        }
+        /*-----重置input样式   end-----*/
+
+        /*-----重置button样式   start-----*/
+        .el-button {
+            padding: 0 20px;
+            height: 28px;
+            line-height: 27px;
+            margin: 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            font-size: 12px;
+            &:hover {
+                border-color: #ccc;
+            }
+            &:visited {
+                border-color: #ccc;
+            }
+            &:active {
+                border-color: #ccc;
+            }
+            &:focus {
+                border-color: #ccc;
+            }
+        }
+        button:hover {
+            text-decoration: none;
+        }
+        /*-----重置button样式   end-----*/
+
+        /*-----重置dialog样式   start-----*/
+        .el-dialog {
+            margin-bottom: 0;
+            .el-dialog__header {
+                padding: 0 16px;
+                height: 36px;
+                line-height: 36px;
+                background: #49b1df;
+                .el-dialog__title {
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #fff;
+                }
+                .el-dialog__headerbtn .el-dialog__close {
+                    color: #fff;
+                    font-size: 9px;
+                    font-weight: 300;
+                    padding-top: 14px;
+                }
+            }
+            .el-dialog__body {
+                padding: 0;
+                color: #333;
+                font-size: 12px;
+            }
+            .el-dialog__footer {
+                /*position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin-top: 10px;*/
+                padding: 10px 16px;
+                background: #f5f5f5;
+                .el-button {
+                    margin: 0;
+                    margin-left: 10px;
+                    font-size: 12px;
+                }
+            }
+        }
+        /*-----重置dialog样式   end-----*/
+
+        /*-----重置树形菜单样式   start-----*/
+        .el-tree {
+            border: 0;
+            padding-left: 6px;
+            .el-tree-node__content {
+                &:hover {
+                    background: #fff;
+                    color: #333;
+                }
+            }
+            .el-tree-node__label {
+                font-size: 12px;
+                color: #333;
+            }
+        }
+        /*-----重置树形菜单样式   end-----*/
+
+        /*-----重置下拉框select样式   start-----*/
+        .el-select-dropdown {
+            border-radius: 0;
+        }
+        .el-icon-caret-top:before {
+            content: "";
+        }
+        .el-select-dropdown__item {
+            font-size: 12px;
+            color: #333;
+            height: 28px;
+        }
+        /*-----重置下拉框select样式   end-----*/
+
+        /*-----重置textarea样式  start-----*/
+        .el-textarea__inner {
+            border-radius: 0;
+            font-size: 12px;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: 'Microsoft YaHei';
+            resize: none;
+        }
+        .el-textarea__inner:hover {
+            border-color: #20a0ff;
+        }
+        /*-----重置textarea样式   end-----*/
+
+        /*-----重置popover样式   start-----*/
+        .el-popover {
+            min-width: 0;
+            width: 98px;
+            padding: 4px 12px;
+            box-sizing: border-box;
+        }
+        .el-tag {
+            background-color: transparent;
+            padding: 0;
+            color: #333;
+            border-radius: 0;
+
+        }
+        .el-popover[x-placement^=right] {
+            margin-left: 0;
+        }
+        /*-----重置popover样式   end-----*/
+
+        /*-----重置表单样式-----  start*/
+        .el-form-item {
+            margin-bottom: 0;
+            margin-top: 16px;
+        }
+        .el-form-item__label {
+            padding: 0;
+            padding: 7px 10px 7px 0;
+            font-size: 12px;
+            color: #333;
+            font-weight: normal;
+        }
+        .el-form-item__content {
+            line-height: 28px;
+        }
+        body label {
+            font-weight: 300;
+        }
+        /*覆盖边框阴影*/
+        .el-tabs--border-card {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            height: 100%;
+        }
+        /*覆盖固定表头阴影*/
+        .el-table__fixed, .el-table__fixed-right {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+        /*-----重置表单样式  end-----*/
+
+        /*-----启用停用样式  start-----*/
+        .el-message {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+            box-sizing: border-box;
+            border-radius: 10px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-color: #000;
+            opacity: .6;
+            min-width: 200px;
+            max-width: 200px;
+            height: 44px;
+            line-height: 44px;
+        }
+        .el-message__group {
+            height: 25px;
+            line-height: 25px;
+        }
+        .el-message__group.is-with-icon {
+            margin-left: 28px;
+        }
+        .el-message__group p {
+            font-size: 12px;
+            color: #fff;
+        }
+        .el-message__group i {
+            color: #05c728;
+            font-size: 30px;
+            margin-right: 14px;
+        }
+        /*启用停用样式  end*/
+
+        /*-----复选框样式覆盖  start-----*/
+        .el-checkbox__input.is-checked .el-checkbox__inner {
+            background-color: #fff;
+            border-color: #ccc;
+        }
+        .el-checkbox__input.is-disabled .el-checkbox__inner {
+            background-color: #eee;
+            border-color: #ccc;
+        }
+        .el-checkbox__inner {
+            border-radius: 0;
+            width: 14px;
+            height: 14px;
+            &:hover {
+                border-color: #4ab9ff;
+                box-shadow: 0 0 3px #badbeb;
+            }
+        }
+        .el-checkbox__inner::after {
+            box-sizing: content-box;
+            content: "";
+            border-bottom-color: #4ab9ff;
+            border-right-color: #4ab9ff;
+            position: absolute;
+            left: 3px;
+            top: 0;
+            -ms-transform: rotate(45deg) scaleY(0);
+            transform: rotate(45deg) scaleY(0);
+            width: 4px;
+            transition: transform .15s cubic-bezier(.71, -.46, .88, .6) .05s;
+            -ms-transform-origin: center;
+            transform-origin: center;
+        }
+        /*-----复选框样式覆盖  end-----*/
+
+        /*-----button背景颜色  start-----*/
+        .cancelButton { //白色背景按钮使用此样式
+            color: #333;
+            &:hover {
+                color: #333;
+            }
+            &:active {
+                color: #333;
+            }
+            &:visited {
+                color: #333;
+            }
+            &:focus {
+                color: #333;
+            }
+        }
+        .confirmButton { //黄色背景按钮使用此样式
+            color: #fff;
+            background: #f09803;
+            &:hover {
+                color: #fff;
+            }
+            &:active {
+                color: #fff;
+            }
+            &:visited {
+                color: #fff;
+            }
+            &:focus {
+                color: #fff;
+            }
+        }
+        /*-----button背景颜色  end-----*/
+
+        /*-----高级查询弹出层   start-----*/
+        .advancedQuery {
+            .el-dialog--small {
+                width: 760px;
+                height: 490px;
+            }
+            .el-dialog__body {
+                .advancedLeft,
+                .advancedRight {
+                    display: inline-block;
+                    float: left;
+                }
+                .advancedLeft {
+                    width: 200px;
+                    height: 410px;
+                    overflow: auto;
+                    border-right: 1px solid #ccc;
+                    box-sizing: border-box;
+                    ul {
+                        li {
+                            height: 36px;
+                            line-height: 36px;
+                            margin: 0 16px;
+                            color: #333;
+                            border-bottom: 1px solid #eeeeee;
+                            .iconfont {
+                                font-size: 8px;
+                                color: #fff;
+                                float: right;
+                            }
+                            &:hover {
+                                color: #4ab0e0;
+                                .icon-guanbi {
+                                    color: #b1b1b1;
+                                }
+
+                            }
+                        }
+                        li.queryPlan {
+                            margin: 0;
+                            padding-left: 16px;
+                            background: #f8f8f8;
+                            border-bottom: 0;
+                            &:hover {
+                                color: #333;
+                            }
+                        }
+                    }
+                }
+                .advancedRight {
+                    width: 560px;
+                    .queryCondition {
+                        height: 36px;
+                        line-height: 36px;
+                        background: #f8f8f8;
+                        padding-left: 16px;
+                    }
+                    .queryOperation {
+                        padding: 16px 0 10px 16px;
+                        .el-input__inner {
+                            width: 322px;
+                            height: 26px;
+                        }
+                        .el-input, .el-input__inner {
+                            width: 322px;
+                        }
+                        .el-button {
+                            padding: 0;
+                            width: 94px;
+                            height: 26px;
+                            line-height: 26px;
+                        }
+                        .modify {
+                            color: #4ab0e0;
+                            text-decoration: underline;
+                            margin: 0 16px;
+                        }
+                        .clear {
+                            color: #999;
+                        }
+                    }
+                    .el-table {
+                        width: 525px;
+                        max-height: 302px;
+                        overflow-y: auto;
+                        margin-left: 16px;
+                        border-right: 0;
+                        border-bottom: 0;
+                        .el-table__body-wrapper, .el-table__footer-wrapper, .el-table__header-wrapper {
+                            width: 525px;
+                        }
+                    }
+                }
+            }
+            .el-dialog__footer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 10px 16px;
+                background: #f5f5f5;
+            }
+        }
+        //某一列嵌入select时，该列添加class=noPaddingCol
+        .el-table .noPaddingCol .cell {
+            padding: 0;
+            .el-input__inner {
+                border: 0;
+            }
+        }
+        /*-----高级查询弹出层   end-----*/
+
+        /*-----货位管理导入弹出层   start-----*/
+        .importBox {
+            font-size: 12px;
+            .el-dialog--small {
+                width: 670px;
+                margin-bottom: 0;
+            }
+            .importBox-t {
+                padding: 16px 0 0 16px;
+            }
+            .importBox-t > span,
+            .el-input__inner,
+            .upload-demo .el-button {
+                font-size: 12px;
+            }
+            .el-input {
+                width: 230px;
+            }
+            .el-input__inner {
+                width: 230px;
+                margin: 0 6px;
+            }
+            .upload-demo {
+                display: inline-block;
+                margin-left: 6px;
+                .el-button {
+                    width: 68px;
+                    height: 26px;
+                    padding: 0;
+                    border: 1px solid #28a7e1;
+                    background: #fff;
+                }
+            }
+            .importBox-b {
+                width: 638px;
+                margin: 10px;
+                text-align: center;
+                .el-table {
+                    border: 1px solid #ddd;
+                    border-right: 0;
+                    border-bottom: 0;
+                }
+                .el-table--border td, .el-table--border th {
+                    border-right: 1px solid #ddd;
+                }
+                .el-table td, .el-table th.is-leaf {
+                    border-bottom: 1px solid #ddd;
+                }
+            }
+        }
+        /*-----货位管理导入弹出层   end-----*/
+
+        /*-----货位管理新增 start-----*/
+        .newContentBox {
+            .el-select {
+                left: 3px;
+            }
+            .units {
+                position: absolute;
+                right: 25px;
+            }
+            .ml-24 {
+                margin-left: 19px;
+                position: relative;
+            }
+            .groupL input {
+                box-sizing: border-box;
+            }
+            .textarea-prompt {
+                position: absolute;
+                bottom: 7px;
+                right: 14px;
+            }
+            .groupL .void {
+                padding-bottom: 55px;
+            }
+            .groupL-pTextarea {
+                margin-left: 26px;
+                position: relative;
+                display: inline-flex;
+            }
+            .groupL-pTextarea span {
+                display: inline-block;
+                vertical-align: top;
+                width: 65px;
+            }
+
+            .el-input, .el-input__inner {
+                width: 230px;
+                color: #303e51;
+            }
+            .groupL input {
+                padding-left: 10px;
+                padding-right: 25px;
+            }
+            .groupL .hasUnit input {
+                padding-right: 30px;
+            }
+            .el-textarea__inner {
+                width: 600px;
+                height: 90px;
+                border: 1px solid #ddd;
+                padding: 4px;
+                line-height: 18px;
+                margin-left: 3px;
+                font-size: 12px;
+                font-family: 'Microsoft YaHei';
+                border-radius: 0;
+            }
+        }
+        /*-----货位管理新增 end-----*/
+
+        /*-----策略配置   start-----*/
+        .addPopup {
+            .el-dialog--small {
+                width: 610px;
+                height: 322px;
+            }
+            .groupL {
+                display: inline-grid;
+                .groupL-p {
+                    position: relative;
+                    >span {
+                        width: 50px;
+                        text-align: right;
+                        margin-right: 6px;
+                        margin-top: 6px;
+                    }
+                    i {
+                        position: absolute;
+                        top: 25px;
+                        right: 10px;
+                    }
+                }
+                .el-input, input {
+                    width: 200px;
+                    -webkit-border-radius: inherit;
+                    -moz-border-radius: inherit;
+                    border-radius: inherit;
+                }
+            }
+            .groupL-pTextarea {
+                position: relative;
+                i {
+                    position: absolute;
+                    top: 55px;
+                    right: 45px;
+                }
+            }
+            .el-dialog__body {
+                padding: 0;
+                padding-top: 10px;
+                padding-left: 16px;
+            }
+            .el-textarea__inner {
+                width: 480px;
+                height: 82px;
+                display: inline-block;
+            }
+        }
+        /*-----策略配置   end-----*/
+
+        /*-----退供下架策略 新增弹出层    start-----*/
+        .addPopupSmall {
+            .el-dialog--small {
+                width: 370px;
+                .el-textarea__inner {
+                    width: 230px;
+                    height: 150px;
+                }
+                .el-input {
+                    width: 230px;
+                }
+            }
+        }
+        /*-----退供下架策略 新增弹出层    end-----*/
+
+
+        /*----------到货登记 start----------*/
+
+        /*-----现场预约 start-----*/
+        .arrivalAppointment {
+            .el-dialog--small {
+                width: 630px;
+                height: 419px;
+                .el-col {
+                    position: relative;
+                }
+            }
+            .el-input, .el-input__inner {
+                width: 200px;
+            }
+            .el-input__icon {
+                position: absolute;
+                right: 30px;
+            }
+            .adviceNumber .el-input__inner {
+                width: 511px;
+            }
+        }
+        /*-----现场预约 end-----*/
+
+        /*-----条码重复提示 start-----*/
+        .barcodeRepeatHint {
+            .el-dialog--small {
+                width: 695px;
+                height: 427px;
+            }
+            .el-table {
+                width: 650px;
+                max-height: 300px;
+                overflow: auto;
+            }
+            .el-dialog__body {
+                padding-top: 16px;
+                padding-left: 16px;
+                .redErrorTip {
+                    background: red;
+                }
+            }
+
+        }
+        /*-----条码重复提示   end-----*/
+
+        /*-----操作提示  start-----*/
+        .operationTip {
+            //378*170
+            .el-dialog {
+                width: 378px;
+                height: 170px;
+                .el-dialog__header {
+                    background: #eee;
+                    .el-dialog__title,
+                    .el-dialog__headerbtn .el-dialog__close {
+                        color: #333;
+                        font-size: 12px;
+                    }
+                }
+                .el-dialog__body {
+                    padding-top: 30px;
+                    padding-left: 30px;
+
+                }
+                .el-dialog__footer {
+                    background: #fff;
+                }
+            }
+            .el-dialog--small {
+                width: 378px;
+            }
+        }
+        /*-----操作提示 end-----*/
+
+        /*-----结束卸货时间-----  start*/
+        .endCargoTime {
+            .el-dialog--small {
+                width: 630px;
+                height: 200px;
+            }
+            .adviceNumber .el-input__inner {
+                width: 511px;
+            }
+            .el-input, .el-input__inner {
+                width: 200px;
+            }
+            .el-input__icon {
+                position: absolute;
+                right: 20px;
+            }
+        }
+        /*-----结束卸货时间   end-----*/
+
+        /*-----打印机设置  start-----*/
+        .printerSetup {
+            .el-dialog--small {
+                width: 370px;
+                height: 200px;
+            }
+            .el-input, .el-input__inner {
+                width: 200px;
+            }
+            a {
+                font-size: 12px;
+                text-decoration: underline;
+                color: #4ab0e0;
+                margin-left: 10px;
+            }
+        }
+        /*-----打印机设置  end-----*/
+
+        /*----------到货登记 end----------*/
+
+        /*----------贴码管理 start----------*/
+
+        /*-----新增贴码明细 start-----*/
+        .newPasteDetail {
+            .el-dialog--small {
+                width: 630px;
+                height: 345px;
+            }
+            .el-input, .el-input__inner {
+                width: 200px;
+                -webkit-border-radius: inherit;
+                -moz-border-radius: inherit;
+                border-radius: inherit;
+            }
+            .hasUnit .el-input, .hasUnit .el-input__inner {
+                padding-right: 35px;
+            }
+            .el-input {
+                margin-left: 4px;
+            }
+            .el-checkbox {
+                top: -2px;
+            }
+            .el-form-item__label {
+                padding: 7px 6px 7px 0;
+            }
+            .goodsName .el-input, .goodsName .el-input__inner {
+                width: 501px;
+            }
+        }
+        /*-----新增贴码明细   end-----*/
+
+        /*-----发出确认弹出层  start-----*/
+        .issueConfirmPopup {
+            .el-dialog--small {
+                width: 640px;
+                height: 415px;
+            }
+            .groupL {
+                .el-input, input {
+                    width: 200px;
+                    -webkit-border-radius: inherit;
+                    -moz-border-radius: inherit;
+                    border-radius: inherit;
+                }
+            }
+            .groupL-p > span {
+                width: 70px;
+            }
+            .el-dialog__body {
+                padding: 0;
+                padding-top: 10px;
+                padding-left: 16px;
+            }
+            .el-textarea__inner {
+                width: 500px;
+                height: 82px;
+            }
+        }
+        /*-----发出确认弹出层  end-----*/
+
+        /*----------贴码管理 end----------*/
+
+        /*---------收货入库管理 start---------*/
+
+        /*-----差异管理弹出层   start-----*/
+        .difference {
+            .el-dialog--small {
+                width: 520px;
+                height: 430px;
+            }
+        }
+        /*-----差异管理弹出层   end-----*/
+
+        /*---------收货入库管理 end----------*/
+
+        /*----------质检组包 start----------*/
+        .nav-select .el-input, .nav-select .el-input__inner {
+            width: 120px;
+            height: 24px;
+            line-height: 24px;
+            box-sizing: border-box;
+            font-size: 12px;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+        /*----------质检组包 end----------*/
+
+        /*-----分页  start-----*/
+        .el-pagination {
+            float: right;
+            margin-top: 16px;
+            .el-select {
+                .el-input {
+                    input {
+                        height: 28px;
+                        line-height: 27px;
+                        padding-top: 4px;
+                    }
+                }
+            }
+            /*.btn-next, .btn-prev {
+                color: #333;
+            }*/
+            .el-icon-arrow-left:after {
+                content: '上一页';
+            }
+            .el-icon-arrow-right:before {
+                content: "下一页";
+            }
+            .el-icon-arrow-right:after {
+                content: "\E602";
+            }
+
+        }
+        /*-----分页   end-----*/
+
+        /*-----标签栏日期 start-----*/
+        .el-date-editor.el-input {
+            width: 120px;
+        }
+        /*-----标签栏日期 end-----*/
+
+        /*-----------退供出库  start----------*/
+
+        /*------所有内容tab切换 start------*/
+        .el-tabs--border-card {
+            border: none;
+            >.el-tabs__header {
+                background: #fff;
+                border: none;
+                .el-tabs__item {
+                    -webkit-border-radius: 4px;
+                    -moz-border-radius: 4px;
+                    border-radius: 4px 4px 0 0;
+                    border-top: 1px solid #ccc;
+                    border-right-color: #ccc;
+                    border-left-color: #ccc;
+                    margin-left: 0;
+                    min-width: 90px;
+                    height: 35px;
+                    line-height: 35px;
+                    text-align: center;
+                    background: #f5f5f5;
+                    color: #999;
+                }
+                .el-tabs__item.is-active {
+                    border-top: 2px solid #28a7e1;
+                    background: #f7fcff;
+                    color: #28a7e1;
+                }
+            }
+            .el-tabs__content {
+                height: calc(100vh - 260px);
+                border: 1px solid #ccc;
+            }
+        }
+        /*-----所有内容tab切换 end-----*/
+
+        /*-----下架单号  start-----*/
+        .odd {
+            .el-input__inner {
+                width: 200px;
+            }
+        }
+        .proup-r {
+            .el-input__inner {
+                width: 200px;
+            }
+        }
+        .contentBox {
+            .group-p {
+                .el-input {
+                    margin-left: 7px;
+                }
+            }
+            .group-c {
+                .el-input{
+                    width: 100px;
+                    .el-input__inner {
+                        width: 100px;
+                    }
+                }
+            }
+            .el-input {
+                .el-input__inner {
+                    -webkit-border-radius:0;
+                    -moz-border-radius:0;
+                    border-radius:0;
+                }
+            }
+            .commodity {
+                .el-input__inner {
+                    width: 200px;
+                }
+                .commodity-b {
+                    .quantity {
+                        .el-input__inner {
+                            width: 80px;
+                        }
+                    }
+                    .conversion {
+                        .el-input__inner {
+                            width: 130px;
+                        }
+                    }
+                }
+            }
+            .product-date {
+                .el-input__inner {
+                    width: 160px;
+                }
+            }
+
+        }
+        /*-----下架单号  start-----*/
+
+        /*-----------退供出库  end----------*/
+
+        /*-----------增值服务管理  start----------*/
+
+        /*-----input输入框 start*/
+        .newContent-service {
+            .el-input {
+                width: 160px;
+                .el-input__inner {
+                    width: 160px;
+                }
+            }
+        }
+        /*-----input输入框 end*/
+
+        /*-----关联单据明细 start*/
+        .newRelevanceDetails {
+            .el-dialog--small {
+                width: 800px;
+                height: 275px;
+                .el-dialog__body {
+                    padding: 0 16px;
+                }
+            }
+
+        }
+        /*-----关联单据明细 end*/
+
+        /*-----------增值服务管理  end----------*/
+
+        /*-----------PC收货  start----------*/
+
+        /*暂存货位弹出层   start*/
+        .temporary-location {
+            .el-dialog--small {
+                width: 390px;
+                height: 200px;
+                .el-input {
+                    width: 300px;
+                    .el-input__inner {
+                        width: 300px;
+                        -webkit-border-radius: 0;
+                        -moz-border-radius: 0;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+        /*暂存货位弹出层   end*/
+
+        /*商品删除  start*/
+        .commodity-delete {
+            .el-dialog--small {
+                width: 390px;
+                height: 230px;
+                .el-input {
+                    width: 230px;
+                    .el-input__inner {
+                        width: 230px;
+                        -webkit-border-radius: 0;
+                        -moz-border-radius: 0;
+                        border-radius: 0;
+                    }
+                }
+                .unit {
+                    width: 30px;
+                    .el-input__inner {
+                        width: 30px;
+                    }
+                }
+                .production-batch {
+                    width: 122px;
+                    .el-input__inner {
+                        width: 122px;
+                    }
+                }
+            }
+        }
+        /*商品删除  end*/
+        /*-----------PC收货  end----------*/
+
+        /*---------销退质检 start----------*/
+        .cargoRegisterPopup {
+            .el-table__expanded-cell {
+                padding: 0px 50px;
+            }
+        }
+       /*销退单差异单提示   start*/
+        .differentBox{
+            margin: 10px 0;
+            .el-dialog {
+                .el-dialog__body {
+                    padding: 16px;
+                    p {
+                        color: #ccc;
+                        margin-bottom: 10px;
+                    }
+                    b {
+                        color: #ff0000;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        /*销退单差异单提示   end*/
+
+        /*---------销退质检 end----------*/
+
+    /*-----wms 重置element ui样式    end-----*/
+    }
+    /*-----查询方案弹出层   start-----*/
+    .wms-el-dropdown-menu {
+        width: 220px;
+        max-height: 324px;
+        overflow: auto;
+        margin: 0;
+        padding: 0;
+        padding-top: 16px;
+        margin-left: 11px;
+        margin-top: 2px;
+        border: 1px solid #cbcbcb;
+        font-size: 12px;
+        .el-dropdown-menu__item--divided {
+            margin-top: 0;
+            border-top: 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .el-dropdown-menu__item {
+            line-height: 28px;
+            padding: 0;
+            margin: 0 16px;
+            color: #333333;
+            &:hover {
+                background: #fff;
+                color: #4eb1e1;
+                .iconfont.icon-xiugai,
+                .iconfont.icon-guanbi {
+                    color: #a1a1a1;
+                }
+            }
+            span {
+                float: right;
+            }
+            .iconfont {
+                font-size: 12px;
+                color: #fff;
+                margin-top: -6px;
+            }
+            .iconfont.icon-xiugai {
+                margin-right: 16px;
+                margin-left: 20px;
+            }
+        }
+        .el-dropdown-menu__item--divided:before {
+            height: 0;
+        }
+        .newPlan {
+            margin: 0;
+            background: #28a8e0;
+            color: #fff;
+            text-align: center;
+            &:hover {
+                background: #28a8e0;
+                color: #fff;
+            }
+        }
+    }
+    /*.el-select-dropdown__item {
+        font-size: 12px;    暂时注释
+    }*/
+    /*-----查询方案弹出层   end-----*/
+}
+/*---------------------重置Element UI样式  end-----------------*/
+

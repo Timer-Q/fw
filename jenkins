@@ -1,0 +1,16 @@
+// 1、testing环境jenkins配置
+echo "正在构建SI管理系统前端" \
+  && docker run --name testing-si-install -v $(pwd):/home -w /home --rm registry.cn-beijing.aliyuncs.com/okoer/bbadmin:node-tools-6.11 yarn install \
+  && docker run --name testing-si-build -v $(pwd):/home -w /home -e HIVESCM_env=testing --rm  registry.cn-beijing.aliyuncs.com/okoer/bbadmin:node-tools-6.11 yarn run publish \
+
+  if [ "`docker ps -f name=testing-si -q`" ]; then
+   echo "stop and rm testing-si"
+   docker stop testing-si
+   docker rm testing-si
+  elif [ "`docker ps -a -f name=testing-si -q`" ]; then
+   echo "rm testing-si"
+   docker rm testing-si
+  else
+   echo "testing-si 不存在"
+  fi \
+  && docker run --name testing-si -e TZ=Asia/Shanghai -d --restart always -v $(pwd)/dist:/usr/share/nginx/html:ro -p 9002:80 registry.cn-beijing.aliyuncs.com/okoer/bbadmin:nginx

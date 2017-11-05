@@ -1,0 +1,209 @@
+@import '../const.scss';
+
+// 全局下拉框样式
+.el-select-dropdown__item {
+    font-size: 12px;
+}
+.permission {
+    .permission-main {
+        margin: 16px;
+    }
+    /* ************************<el-form>样式重置************************ */
+        .el-form-item {
+            margin-bottom: 0;
+            .el-form-item__label {
+                font-size: 12px;
+            }
+            .el-input {
+                .el-input__inner {
+                    font-size: 12px;
+                }
+            }
+        }
+        .el-form--inline {
+            margin: 16px 16px 10px;
+        }
+    /* ************************</el-form>样式重置************************ */
+
+    /* ************************<el-tabs>样式重置************************ */
+        .bee-tabs-wrapper>.el-tabs.bee-tabs { margin: 0 16px; }
+        .bee-tabs-wrapper>.el-tabs.bee-tabs .el-tabs__header { margin: 0; }
+        .bee-tabs-wrapper>.el-tabs.bee-tabs .el-tabs__header .el-tabs__item {
+        background-color: #f5f5f5;
+        border: 1px solid #cbcbcb;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        padding: 0;
+        width: 88px;
+        height: 34px;
+        line-height: 36px;
+        text-align: center;
+        /* 实现tab切换效果 */
+        box-sizing: initial;
+        margin-right: 0px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: 1px solid transparent;
+        transition: 0s;
+        }
+        .bee-tabs-wrapper>.el-tabs .el-tabs__header .el-tabs__item.is-active {
+        background-color: #f6fefe;
+        border-top: 2px solid #28a8e2;
+        color: #28a8e2;
+        position: relative;
+        top: 1.5px;
+        }
+        .bee-tabs-wrapper>.el-tabs .el-tabs__content {
+        min-height: 400px;
+        border: 1px solid #cbcbcb;
+        border-top: 0;
+        padding: 16px;
+        }
+    /* ************************</el-tabs>样式重置************************ */
+
+    /* ************************<el-table>样式重置************************ */
+        .el-table th {
+            height: 32px;
+        }
+        .el-table th.is-leaf {
+            border-bottom: 1px solid #cbcbcb;
+        }
+        .el-table td {
+            height: 28px;
+            font-size: 14px;
+        }
+        .el-table,
+        .el-table--border td,
+        .el-table--border th {
+            border-color: #ccc;
+        }
+        .el-table th,
+        .el-table__fixed-header-wrapper thead div,
+        .el-table__header-wrapper thead div {
+            background: $tableBg;
+            font-size: $tableFontSize;
+            font-weight: 400;
+            color: #333;
+        }
+        .el-table .cell,
+        .el-table th>div {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .td-center {
+            text-align: center;
+        }
+        .td-right {
+            text-align: right;
+        }
+    /* ************************</el-table>样式重置************************ */
+
+    /* ************************<el-dialog>样式重置************************ */
+        .el-dialog {
+            top: 30%;
+        }
+        /* dialog重置头部样式*/
+        .el-dialog__header {
+            height: 36px;
+            line-height: 36px;
+            padding: 0 15px;
+            box-sizing: border-box;
+            background-color: #48aeec;
+            .el-dialog__close {
+                font-size: 12px;
+                color: #fff;
+            }
+        }
+        .el-dialog__title {
+            font-size: 14px;
+            color: #fff;
+            font-weight: normal;
+        }
+        .el-dialog__headerbtn {
+            margin-top: 10px;
+        }
+        /* dialog-body重置样式*/
+        .el-dialog__body {
+            padding: 16px 20px;
+            font-size: 12px;
+            /* dialog-body内每行最外层div基础样式*/
+            .dialog-line {
+                padding-bottom: 10px;
+                >div {
+                    position: relative;
+                }
+                /* dialog-line内每行input样式重置*/
+                .el-input {
+                    display: inline-block;
+                }
+                .el-input__inner {
+                    font-size: 12px;
+                    padding: 0;
+                    padding-left: 10px;
+                    border-radius: 0;
+                    &:nth-child(1) {
+                        padding-right: 30px;
+                    }
+                }
+            }
+            .dialog-line-label {
+                display: inline-block;
+                margin-right: 10px;
+                font-size: 12px;
+            }
+            .must-star {
+                &:before {
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    transform: translate(0, -50%);
+                    content: '*';
+                    font-size: 12px;
+                    color: red;
+                }
+            }
+            .disabled-style {
+                border-Color: '#eee';
+                .el-input__inner {
+                    color: #ccc;
+                }
+            }
+        }
+        /* dialog-footer内button样式重置*/
+        .el-dialog__footer {
+            height: 44px;
+            padding: 0;
+            padding-top: 10px;
+            padding-right: 16px;
+            background-color: #f5f5f5;
+            .el-button {
+                height: 24px;
+                line-height: 24px;
+                padding-top: 0;
+                padding-bottom: 0;
+                font-size: 12px;
+            }
+            .el-button--warning {
+                span {
+                    color: #fff;
+                }
+            }
+            .el-button--primary {
+                border-color: #20a0ff;
+                background-color: #f6fefe;
+            }
+        }
+    /* ************************</el-dialog>样式重置************************ */
+}
+
+/* ************************自定义过滤器样式************************ */
+    .countNum {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        .nowNum {
+            color: $theme-blue;
+        }
+    }
+/* ************************自定义过滤器样式************************ */
+

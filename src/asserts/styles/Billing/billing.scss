@@ -1,0 +1,388 @@
+@import '../const.scss'; /**
+ * billing 样式
+ * 2017年10月19日
+*/
+
+body,
+html {
+    font-family: sans-serif;
+}
+// billing 按钮组
+
+.billing-btn-group {
+    padding: 10px;
+    border-bottom: 1px solid #f2f2f2;
+    box-shadow: 0 5px 10px #f2f2f2;
+    margin-bottom: 10px;
+
+    & > .el-button,
+    & > .el-dropdown {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .el-button--small {
+        padding: 3px 7px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.billing-wrapper {
+    padding: 0 10px;
+
+    .el-pagination {
+        padding: 10px 0;
+        text-align: right;
+    }
+}
+
+.billing-header {
+    color: $blueBg;
+    font-size: 14px;
+    padding: 10px 0;
+}
+// billing 下拉菜单样式
+
+.billing-dropdown-menu {
+    font-size: 12px;
+    min-width: 65px;
+
+    .el-dropdown-menu__item {
+        line-height: 24px;
+    }
+}
+// billing popover样式
+
+.billing-popover {
+    padding: 0;
+    width: 37.5%;
+
+    .popover-header {
+        margin: 0;
+        padding: 10px;
+        background: #49b1df;
+        font-size: 12px;
+        font-weight: 400;
+        color: #fff;
+    }
+
+    .popover-content {
+        padding: 0 10px;
+    }
+
+    .popover-content-item {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .popover-content-item:last-child {
+        border-bottom: none;
+    }
+
+    .popover-content-row {
+        .el-checkbox__label {
+            font-size: 12px;
+        }
+
+        & > span {
+            display: inline-block;
+            // min-width: 45%;
+            padding-right: 10px;
+            font-size: 12px;
+        }
+    }
+
+    .el-checkbox__label {
+        font-size: 12px;
+    }
+
+    .popover-content-header {
+        margin: 0;
+        color: #3bb6ec;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 40px;
+    }
+    // .popper__arrow::after {
+    //     border-right-color: #49b1df !important;
+    // }
+}
+// 复选框样式复写
+
+[class*='billing'] {
+    /*-----复选框样式覆盖  start-----*/
+    .el-checkbox__input.is-checked .el-checkbox__inner {
+        background-color: #fff;
+        border-color: #ccc;
+    }
+
+    .el-checkbox__input.is-disabled .el-checkbox__inner {
+        background-color: #eee;
+        border-color: #ccc;
+    }
+
+    .el-checkbox__inner {
+        border-radius: 0;
+        width: 14px;
+        height: 14px;
+
+        &:hover {
+            border-color: #4ab9ff;
+            box-shadow: 0 0 3px #badbeb;
+        }
+    }
+
+    .el-checkbox__inner::after {
+        box-sizing: content-box;
+        content: "";
+        border-bottom-color: #4ab9ff;
+        border-right-color: #4ab9ff;
+        position: absolute;
+        left: 3px;
+        top: 0;
+        -ms-transform: rotate(45deg) scaleY(0);
+        transform: rotate(45deg) scaleY(0);
+        width: 4px;
+        transition: transform 0.15s cubic-bezier(.71, -.46, .88, .6) 0.05s;
+        -ms-transform-origin: center;
+        transform-origin: center;
+    }
+    /*-----复选框样式覆盖  end-----*/
+}
+// billing 重写 elementui样式
+
+[class*='billing'] {
+    .tool-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 1;
+        height: 32px;
+        background: #eee;
+        border-top: 1px solid #cbcbcb;
+        border-left: 1px solid #cbcbcb;
+        padding: 0 5px;
+        box-sizing: border-box;
+        color: #229fd2;
+        cursor: pointer;
+    }
+    // 重写 form 样式
+    .condition-form,
+    .billing-form-inline {
+        .el-form {
+            padding: 15px;
+        }
+
+        .el-form-item {
+            margin-right: 40px;
+            margin-bottom: 10px;
+
+            .el-date-editor {
+                &.el-input {
+                    width: 160px;
+                }
+            }
+
+            .popover-trigger-icon {
+                position: absolute;
+                top: 12px;
+                right: -20px;
+            }
+        }
+
+        .el-form-item__label {
+            font-size: 12px;
+            padding-right: 10px;
+            width: 90px;
+            color: #333;
+        }
+
+        .el-input__inner {
+            display: inline-block;
+            box-sizing: border-box;
+            width: 160px;
+            height: 30px;
+            font-size: 12px;
+            border-radius: 0;
+        }
+        .el-pagination {
+            .el-input__inner {
+                width: 110px;
+            }
+        }
+        .el-form-item__content {
+            position: relative;
+
+            .fa {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        .col-span-2 {
+            .el-input__inner {
+                width: 455px;
+            }
+        }
+
+        .col-span-3 {
+            .el-input__inner {
+                width: 750px;
+            }
+        }
+
+        .el-form-item.is-required .el-form-item__label:before {
+            display: none;
+        }
+
+        .el-form-item__error {
+            padding-top: 0;
+        }
+    }
+    // 重写table样式
+    .el-table {
+        td,
+        th {
+            font-size: 12px;
+            height: 30px;
+
+            .cell {
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding: 0 10px;
+            }
+        }
+
+        .el-input__inner {
+            border: none;
+            height: 24px;
+            line-height: 24px;
+            border-radius: 0;
+            max-width: 100%;
+            font-size: 12px;
+        }
+        .el-checkbox {
+            width: 14px;
+        }
+        .el-checkbox__inner {
+            width: 14px;
+            height: 14px;
+            min-height: auto;
+        }
+    }
+
+    .dialog-content {
+        display: flex;
+
+        .dialog-left {
+            flex: 1;
+            border-right: 1px solid #ccc;
+
+            .el-tree {
+                border: none;
+            }
+        }
+
+        .dialog-right {
+            flex: 4;
+
+            .dialog-right-content {
+                padding: 15px;
+            }
+
+            .el-form-item__content {
+                width: 100%;
+            }
+        }
+
+        .dialog-sub-header {
+            margin: 0;
+            padding: 10px;
+            background: #f8f8f8;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .condition-form {
+            margin: 0;
+
+            .el-form-item {
+                margin-bottom: 10px;
+
+                .el-form-item__content {
+                    width: auto;
+                }
+            }
+        }
+
+        .form-slipped {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .condition-form-side {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+        }
+
+        .el-table {
+            .el-table__body {
+                .el-input,
+                .el-select {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .dialog-search {
+        .el-form-item {
+            margin-bottom: 10px;
+        }
+
+        .el-input__inner {
+            border-radius: 0;
+            border-color: 1px solid #cacaca;
+        }
+
+        .el-button--text {
+            color: #929292;
+
+            &:hover {
+                color: #4db3ff;
+            }
+        }
+    }
+    // 对话框样式
+    .el-dialog__header {
+        background: $blueBg;
+
+        .el-dialog__title {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        &.el-dialog__header-fail {
+            background: #eee;
+            color: #303030;
+        }
+    }
+
+    .el-dialog__body {
+        padding: 0;
+    }
+
+    .dialog-footer,
+    .el-dialog__footer {
+        text-align: right;
+        padding: 10px;
+        background: #f5f5f5;
+    }
+}

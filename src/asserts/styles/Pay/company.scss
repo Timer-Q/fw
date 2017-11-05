@@ -1,0 +1,131 @@
+/* 企业用户管理样式*/
+&.company {
+    /* 模块标题*/
+    .u-modules-title {
+        padding: 10px 20px;
+        font-size: 14px;
+        color: #28a7e1;
+        background-color: #f5f5f5;
+    }
+    /* 模块最外层盒子*/
+    .m-modules-box {
+        border: 1px solid #eee;
+        margin-bottom: 24px;
+    }
+    /* 模块内容盒子*/
+    .m-modules-content {
+        padding: 16px;
+    }
+    /* 模块每一行*/
+    .m-modules-line {
+        margin-bottom: 10px;
+    }
+    /* 模块每一行标题*/
+    .u-modules-label {
+        display: inline-block;
+        margin-right: 10px;
+        text-align: right;
+        font-size: 12px;
+        color: #333;
+    }
+    /* 模块内input*/
+    .u-modules-input {
+        width: 300px;
+        .el-input__inner {
+            border-radius: 0;
+        }
+    }
+    .u-modules-select {
+        width: 80px;
+        .el-input {
+            width: 80px;
+        }
+        .el-input__inner {
+            border-radius: 0;
+        }
+    }
+    /* 模块内radio*/
+    .u-modules-radio {
+        .el-radio__inner {
+            width: 12px;
+            height: 12px;
+        }
+        .el-radio__label {
+            font-size: 12px;
+        }
+    }
+    /* 步骤模块内btn*/
+    .u-modules-step-btn {
+        height: 28px;
+        line-height: 28px;
+    }
+}
+
+/*开户信息*/
+.open-account-info {
+    .u-fw-address-select {
+        display: inline-block;
+        .el-input {
+            width: 300px;
+        }
+        .el-input__inner {
+            border-radius: 0;
+        }
+    }
+}
+
+/*开户信息*/
+.open-account-info-details {
+    .info-photo {
+        display: inline-block;
+        width: 68px;
+        height: 68px;
+    }
+    .uploadImg-box {
+        display: inline-block;
+        vertical-align: text-top;
+        .one-uploadImg {
+            float: left;
+        }
+        .thumbnails {
+            width: 68px;
+            height: 68px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .upload-info {
+            position: relative;
+            width: 68px;
+            height: 68px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            p {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(0, -50%);
+                width: 100%;
+                font-size: 12px;
+                color: #ccc;
+                text-align: center;
+            }
+        }
+        .upload-input {
+            .el-button {
+                height: 22px;
+                padding: 0 10px;
+                font-size: 12px;
+                vertical-align: bottom;
+            }
+            .error {
+                display: block;
+                visibility: hidden;
+                margin: 3px 0;
+            }
+            .err-visibility-visible {
+                visibility: visible;
+            }
+        }
+    }
+}

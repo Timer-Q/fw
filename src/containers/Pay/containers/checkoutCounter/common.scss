@@ -1,0 +1,85 @@
+//红色按钮样式
+@mixin btnBox {
+    padding: 36px 0 36px 70px;
+    p {
+        width: 180px;
+        height: 42px;
+        border-radius: 2px;
+        line-height: 42px;
+        text-align: center;
+        font-size: 18px;
+        color: #fff;
+        background-color: #ee3333;
+        cursor: pointer;
+    }
+    // 增加可拓展内容
+    @content;
+}
+
+//每个模块上方标题样式
+@mixin titleBox {
+    height: 36px;
+    line-height: 36px;
+    padding-left: 16px;
+    box-sizing: border-box;
+    background-color: #e8e8e8;
+    span {
+        font-size: 14px;
+        color: #666;
+    }
+    @content;
+}
+
+//最外层盒子样式
+@mixin outBox {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(88, 103, 120, 0.2);
+    background-color: #fff;
+    @content;
+}
+
+//输入框样式
+@mixin inputStyle {
+    height: 30px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    &:disabled {
+        color: #999;
+        background-color: #f5f5f5;
+    }
+    &::-webkit-input-placeholder {
+        font-size: 12px;
+        color: #ccc;
+    }
+    &::-moz-placeholder {
+        font-size: 12px;
+        color: #ccc;
+    }
+    &:-ms-input-placeholder {
+        font-size: 12px;
+        color: #ccc;
+    }
+    @content;
+}
+
+//输入框前方文字样式
+@mixin labelStyle {
+    display: inline-block;
+    width: 60px;
+    margin-right: 10px;
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+    @content;
+}
+
+//输入框后方文字样式
+@mixin tipsStyle {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    @content;
+}

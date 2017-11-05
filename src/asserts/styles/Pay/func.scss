@@ -1,0 +1,28 @@
+/*金融支付*/
+.f-l {
+    float: left;
+}
+
+.f-r {
+    float: right;
+}
+
+.f-clearfix:after {
+    height: 0;
+    content: "";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+/* 必填星号样式*/
+.f-must-star {
+    &:before {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translate(0, -50%);
+        content: '*';
+        font-size: 12px;
+        color: red;
+    }
+}
