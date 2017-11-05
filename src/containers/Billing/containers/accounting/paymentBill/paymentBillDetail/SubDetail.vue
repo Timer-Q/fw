@@ -188,7 +188,16 @@ export default {
       this.detailTableData.splice(this.getIndex(), 1)
     }
   },
+  watch: {
+    'detailTableData': function () {
+      console.log(this.detailTableData, 'sssssssssssssssssssssssssssssssssssssssss')
+      // this.detailTableData = this.detailTableData.slice()
+    }
+  },
   created () {
+    this.$nextTick(() => {
+      console.log(this.detailTableData, 'ghjklgfghjkfghjklkjhgfghjklkjhgfgh')
+    })
   }
 }
 </script>

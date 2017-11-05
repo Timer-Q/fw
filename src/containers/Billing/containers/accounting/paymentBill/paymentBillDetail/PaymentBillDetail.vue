@@ -120,7 +120,7 @@
             </el-form-item>
         </el-form>
         <transition name="detail">
-            <sub-detail v-if="isShowDetail" :isHasSource="isWithSource" :detailTableData="detailTableData"></sub-detail>
+            <sub-detail v-if="isShowDetail" :isHasSource="isWithSource" :detailTableData="formData.detailTableData"></sub-detail>
         </transition>
         <upload-dialog :dialogVisible="dialogVisible"></upload-dialog>
         <slider size="small" headerName="hehe" v-if="isModify || isScan">
@@ -164,8 +164,17 @@ export default {
                 callback()
             }
         }
+        var dateValidate = (rule, value, callback) => {
+            if (!value) {
+                return callback(new Error('日期不能为空'))
+            } else {
+                callback()
+            }
+        }
         return {
-            formData: {},
+            formData: {
+                detailTableData: []
+            },
             formDataTemp: {
                 createUser: 12,
                 payOriginazation: 1,
@@ -173,7 +182,7 @@ export default {
                 createTime: new Date().getTime(),
                 payType: '1',
                 serviceCharge: '1',
-                invoiceInfoDetailList: [
+                detailTableData: [
                     {}
                 ],
                 isAlreadyGenerateEinvoice: false,
@@ -181,13 +190,13 @@ export default {
                 isAlreadyOpenControltax: false,
                 billTime: new Date().getTime(),
                 sourceBillType: '手工创建',
-                receivingCustomer: '1',
+                receivingCustomer: '1', // 根据 往来对象类型联动
                 currentObjectType: 'SUPLIER',
                 clearingForm: '1',
                 currency: '1',
                 payBankAccount: '1',
                 receivingBankAccount: '1',
-                subordinateClert: '1'
+                subordinateClert: '1' // 无源：根据所选客户带出，可编辑
             },
             payOriginazationOptions: [ // 付款组织 options
                 {
@@ -234,7 +243,7 @@ export default {
                 },
                 {
                     label: '客户',
-                    value: 'CUSTOMNER'
+                    value: 'CUSTOMER'
                 },
                 {
                     label: '部门',
@@ -280,7 +289,7 @@ export default {
                     { required: true, trigger: 'blur' }
                 ],
                 billTime: [
-                    { type: 'date', required: true, message: '请填写单据日期', trigger: 'change' }
+                    { validator: dateValidate, required: true, trigger: 'change' }
                 ],
                 sourceBillType: [
                     { required: true, message: '请填写开票组织', trigger: 'blur' }
@@ -331,7 +340,6 @@ export default {
             dialogVisible: {
                 dialogUploadVisible: false
             },
-            detailTableData: [],
             isScan: true, // 如果是查看，form变为只读
             multipleData: {
                 data: [],
@@ -350,7 +358,7 @@ export default {
         handleSaveAndNew () {
             this.paymentBillNew(this.initFormData)
         },
-        clearingFormSelectChange() {
+        clearingFormSelectChange(val) {
             // FIXME:
         },
         // 新增
@@ -697,7 +705,7 @@ export default {
                     this.formData.billTime = parseInt(this.formData.billTime)
                     // 表体数据
                     if (response.data.result.payInfoDetailDTOList) {
-                        this.detailTableData = response.data.result.payInfoDetailDTOList
+                        this.formData.detailTableData = response.data.result.payInfoDetailDTOList
                     }
                 }
             } catch (error) {
@@ -805,7 +813,6 @@ export default {
     watch: {
         // 切换tab的时候判断
         tabState () {
-            debugger
             console.log(this.tabState, this.tabAttr, 'asdfghjkl')
             if (this.tabState.name === this.tabAttr.tag) {
                 this.getDataById()
@@ -813,12 +820,33 @@ export default {
         },
         // 日期 转换
         'formData.billTime': function (val, oldVal) {
+            console.log(val, oldVal, 'ddddddddddddddddddddddddddddd')
             if (val instanceof Date) {
-                return val.getTime()
+                return new Data(val).getTime()
             }
             if (typeof val === 'string') {
                 return parseInt(val)
             }
+        },
+        'formData.currentObjectType': function (val, oldVal) {
+            console.log(val, oldVal, this.formData, '往来对象类型 watch')
+            let voidObj = {
+                orderSupplier: '',
+                paySupplier: '',
+                billingSupplier: ''
+            }
+            if (val === 'CUSTOMER') { // 往来对象为 客户
+                let customerObj = {
+                    orderSupplier: '订单客户',
+                    paySupplier: '应收客户',
+                    billingSupplier: '收票客户'
+                }
+                // this.$set(this.formData.detailTableData, this.formData.detailTableData[0], Object.assign(this.formData.detailTableData[0], customerObj))
+                // this.formData.detailTableData[0] = customerObj
+            } else {
+                this.formData.detailTableData[0] = voidObj
+            }
+            // this.formData.detailTableData = this.formData.detailTableData.slice()
         }
     },
     components: {
