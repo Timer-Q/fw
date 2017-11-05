@@ -280,7 +280,7 @@ export default {
                     { required: true, trigger: 'blur' }
                 ],
                 billTime: [
-                    { type: 'number', required: true, message: '请填写单据日期', trigger: 'change' }
+                    { type: 'date', required: true, message: '请填写单据日期', trigger: 'change' }
                 ],
                 sourceBillType: [
                     { required: true, message: '请填写开票组织', trigger: 'blur' }
