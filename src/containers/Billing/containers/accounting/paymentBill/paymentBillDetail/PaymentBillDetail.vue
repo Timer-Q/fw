@@ -580,6 +580,7 @@ export default {
                 type: 'warning'
             }).then(() => {
                 this.$refs.paymentBillDetalForm.resetFields()
+                this.$root.bus.$emit('removeTwoLevelTab', this.tabAttr.tag)
                 this.$message({
                     type: 'success',
                     message: '取消成功!'

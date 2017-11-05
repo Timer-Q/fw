@@ -23,9 +23,7 @@
         </el-table-column>
       </el-table>
     </section>
-
     <tooltip name="paymentDetail">
-      <!-- <el-button size="mini" @click="modify">修改</el-button> -->
       <el-button size="mini" @click="handleDeleteLine">删除</el-button>
     </tooltip>
   </section>
@@ -182,6 +180,9 @@ export default {
     },
     handleAddLine () {
       this.detailTableData.push({})
+    },
+    getIndex () {
+      return this.detailTableData.indexOf(this.detailDataTemp)
     },
     handleDeleteLine () {
       this.detailTableData.splice(this.getIndex(), 1)
