@@ -184,7 +184,7 @@ function r(){
         var lastData
         if(isMultiPart){
             lastData=new FormData()
-            for(var i in data){
+            for(i in data){
                 var item=data[i]
                 if(isArray(item)&&item[0] instanceof Blob){
                     lastData.append(i,item[0],item[1])
